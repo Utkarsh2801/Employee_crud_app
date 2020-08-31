@@ -1,0 +1,147 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+.navigation {
+  display: flex;
+  padding: 1rem 2rem;
+  border-bottom: 2px solid #a59090;
+}
+
+.heading,
+.nav_button {
+  flex: 1;
+}
+
+.heading {
+  font-family: "Comic Neue", cursive;
+  font-size: 2rem;
+}
+
+.heading span {
+  color: #ad3939;
+}
+
+.nav_button {
+  text-align: right;
+}
+
+.nav_button a {
+  display: block;
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.nav_button button {
+  font-family: "Comic Neue", cursive;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  background-color: #ad3939;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.add_form {
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  box-shadow: 3px 7px 41px -11px rgba(0, 0, 0, 0.75);
+  padding-top: 3rem;
+}
+
+.add_form input {
+  display: block;
+  width: 100%;
+}
+
+.add_form div input {
+  margin-bottom: 2rem;
+  border: none;
+  border-bottom: 1px solid #ad3939;
+  padding: 0.5rem 1rem;
+  outline: none;
+  color: #ad3939;
+  font-family: "Comic Neue", cursive;
+  font-size: 1.1rem;
+}
+
+.add_form div input[type="submit"] {
+  display: inline-block;
+  width: auto;
+  padding: 0.5rem 1.5rem;
+  font-family: "Comic Neue", cursive;
+  font-size: 1rem;
+  border: none;
+  background-color: #ad3939;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.my_employees {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  box-shadow: 3px 7px 41px -11px rgba(0, 0, 0, 0.75);
+}
+
+.my_employees h1 {
+  font-family: "Comic Neue", cursive;
+  margin-bottom: 2rem;
+  color: #ad3939;
+}
+
+.employee {
+  display: flex;
+  font-family: "Comic Neue", cursive;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ad3939;
+}
+
+.employee_des {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.employee .action_buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1;
+  font-size: 3rem;
+}
+
+.employee_icon {
+  padding-right: 0.5rem;
+  text-align: center;
+  line-height: auto;
+}
+
+.details {
+  flex: 7;
+}
+
+.details p {
+  margin-top: 5px;
+}
+
+.edit,
+.delete {
+  padding: 8px 10px;
+  color: #ffffff;
+  background: #ad3939;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  font-size: 1.1rem;
+}

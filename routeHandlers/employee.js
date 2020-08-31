@@ -6,7 +6,7 @@ exports.addEmployee = async (req, res, next) => {
 
   try {
     if (!name || !email || !designated) {
-      res.json({
+      return res.json({
         success: false,
         msg: "please fill all the required fields",
       });
@@ -15,7 +15,7 @@ exports.addEmployee = async (req, res, next) => {
     const emp = await Employee.findOne({ email });
 
     if (emp) {
-      res.json({
+      return res.json({
         success: false,
         msg: "Employee already exists",
       });
@@ -30,13 +30,13 @@ exports.addEmployee = async (req, res, next) => {
     if (!employee) {
       throw new Error("Please fill all the required fields");
     }
-    res.json({
+    return res.json({
       sucess: true,
       data: employee,
     });
   } catch (err) {
     res.json({
-      sucess: false,
+      success: false,
       msg: "Something went wrong",
     });
   }
@@ -47,16 +47,16 @@ exports.deleteEmployee = async (req, res, next) => {
   try {
     const { id } = req.params;
 
-    const employee = await Employee.findByIdAndRemove(id);
+    const employee = await Employee.findByIdAndDelete(id);
 
     res.json({
-      success: false,
+      success: true,
       data: employee,
     });
   } catch (err) {
     console.log(err);
     res.json({
-      sucess: false,
+      success: false,
       msg: "Something went wrong",
     });
   }
@@ -72,7 +72,7 @@ exports.updateEmployee = async (req, res, next) => {
     });
 
     res.json({
-      success: false,
+      success: true,
       data: employee,
     });
   } catch (err) {
@@ -90,13 +90,13 @@ exports.getEmployees = async (req, res, next) => {
     const employees = await Employee.find({});
 
     res.json({
-      sucess: true,
+      success: true,
       data: employees,
     });
   } catch (err) {
     console.log(err);
     res.json({
-      sucess: false,
+      success: false,
       msg: "Something went wrong",
     });
   }
@@ -110,15 +110,20 @@ exports.getEmployee = async (req, res, next) => {
     const employee = await Employee.findById(id);
 
     if (!employee) {
-      res.json({
+      return res.json({
         success: false,
         msg: "Employee Not found",
       });
     }
+
+    res.json({
+      success: true,
+      data: employee,
+    });
   } catch (err) {
     console.log(err);
     res.json({
-      sucess: false,
+      success: false,
       msg: "Something went wrong",
     });
   }
